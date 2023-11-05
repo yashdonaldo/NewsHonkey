@@ -8,7 +8,7 @@ export class Newsitem extends Component {
             <div>
                 <div className="card" style={{width: "18rem"}}>
                 <span className="badge rounded-pill bg-danger" style={{position: "absolute", right: "2px"}}>{source}</span>
-                    <img src={!imgurl? "https://www.livemint.com/lm-img/img/2023/10/26/1600x900/Meta-Facebook-Connect-0_1695836626646_1698339282282.jpg" :imgurl} className="card-img-top" alt="..."/>
+                    <img src={!imgurl? "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Image_not_available.png/640px-Image_not_available.png" :imgurl} className="card-img-top" alt="..."/>
                         <div className="card-body">
                             <h5 className="card-title">{tittle}</h5>
                             <p className="card-text">{discription}</p>
