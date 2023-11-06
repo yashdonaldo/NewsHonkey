@@ -119,13 +119,12 @@ export class News extends Component {
         }
     }
     fetchMoreData = async () => {
+        let url = `https://newsapi.org/v2/top-headlines?country=in&category=${this.props.category}&apiKey=${this.props.apikey}&page=${this.state.page + 1}&pagesize=20`;
         this.setState({ page: this.state.page + 1 })
-        let url = `https://newsapi.org/v2/top-headlines?country=in&category=${this.props.category}&apiKey=${this.props.apikey}&page=${this.state.page - 1}&pagesize=20`;
         let data = await fetch(url);
         let parsedata = await data.json();
 
         this.setState({
-            page: this.state.page - 1,
             articles: this.state.articles.concat(parsedata.articles),
         })
     }
@@ -133,7 +132,7 @@ export class News extends Component {
         ("render")
         return (
             <div>
-                <h1 className='my-3' style={{ textAlign: "center" }}>NewsHonkey - Top {this.firstletter(this.props.category)} News Headlines</h1>
+                <h1 style={{ textAlign: "center", marginTop: "5rem" }}>NewsHonkey - Top {this.firstletter(this.props.category)} News Headlines</h1>
                 {this.state.loading && <Loading />}
 
                 
